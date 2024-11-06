@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Bell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .notification-container {
+            position: relative;
+        }
+
+        .notification-icon {
+            font-size: 50px;
+            cursor: pointer;
+        }
+
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-container">
+        <div class="notification-icon" id="notificationIcon">
+            <span class="badge" id="notificationBadge">0</span>
+            &#128276; <!-- Bell icon -->
+        </div>
+    </div>
+
+    <script>
+        let notificationCount = 0;
+
+        const notificationIcon = document.getElementById('notificationIcon');
+        const notificationBadge = document.getElementById('notificationBadge');
+
+        notificationIcon.addEventListener('click', () => {
+            notificationCount++;
+            notificationBadge.textContent = notificationCount;
+        });
+    </script>
+</body>
+</html>
